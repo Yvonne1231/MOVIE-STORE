@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>JORAH ENTER</h1>
+
+
+
+<%= link_to 'New Movie', new_movie_path %>
+
+
+
+
+
+
+
+<center><b><u><h4><%= link_to "New Movie", new_movie_path %></h4></u></b></center>  
+<br>   
+<br>   
+
+<div class="album py-5 bg-light">
+        <div class="container">
+        <div class="row">
+ <% @movies.each do |m| %> 
+          
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img src="<%= m.attachment %>" class="card-img-top"  alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text"><b>Title:JORAH ENTERTAINMENT MOVIE STORE</b><%= m.title %><br>
+                  <b>category:</b><%= m.category %><br>
+                  <b>Year:</b><%= m.year %><br>
+                  <b>price:</b><%= m.price %></p>
+                  <b><u><%= link_to "Download", m.attachment_url %></b></u>
+                  <b><u><%= link_to "Delete",  m, method: :delete, confirm: "Are you sure you want to delete #{m.attachment}?" %>
+                  </b></u>
+                  </div>
+                </div>
+              </div>
+              <% end %> 
+            </div>
+            <br>
+            <br>
+            
